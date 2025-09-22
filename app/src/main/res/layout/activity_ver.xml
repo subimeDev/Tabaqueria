@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ver">
+
+    <TableLayout
+        android:id="@+id/tableProductosVer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:padding="16dp">
+
+        <TableRow>
+            <TextView
+                android:text="ID"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+            <TextView
+                android:text="Nombre"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+            <TextView
+                android:text="Cantidad"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+            <TextView
+                android:text="Precio"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
