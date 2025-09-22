@@ -38,9 +38,9 @@ public class Agregar extends AppCompatActivity {
        // gestion = new Gestion(new ArrayList<>());
 
 
-        gestion.agregarProducto(new Producto(1,"pall man",10,2500));
-        gestion.agregarProducto(new Producto(2,"Tabaco",10,4000));
-        gestion.agregarProducto(new Producto(3,"Encendedor",5,400));
+        gestion.agregar(new Producto(1,"pall man",10,2500));
+        gestion.agregar(new Producto(2,"Tabaco",10,4000));
+        gestion.agregar(new Producto(3,"Encendedor",5,400));
 
 
 
@@ -113,9 +113,9 @@ public class Agregar extends AppCompatActivity {
 
                 //Crear producto y agregamos a la lista gestion
 
-                int id = gestion.obtenerProductos().size()+1; // esto hace que sea auto increment las id como en bd
+                int id = gestion.obtenerTodos().size()+1; // esto hace que sea auto increment las id como en bd
                 Producto nuevo = new Producto(id,nombre,ocantidad,Oprecio); // aqui es oprecio o ocantidad porque transformamos denante
-                gestion.agregarProducto(nuevo);
+                gestion.agregar(nuevo);
 
                 // ahora vamos con crear filas en la tabla
                 TextView tvId = new TextView(Agregar.this);
@@ -148,7 +148,7 @@ public class Agregar extends AppCompatActivity {
                 btnDelete.setLayoutParams(params);
 
                 btnDelete.setOnClickListener(v -> {
-                    gestion.eliminarProducto(nuevo.getId());
+                    gestion.eliminar(nuevo.getId());
                     tableProductos.removeView(fila);
                     Toast.makeText(Agregar.this, "Producto eliminado", Toast.LENGTH_SHORT).show();
                 });

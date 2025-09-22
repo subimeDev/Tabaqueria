@@ -23,9 +23,9 @@ public class Ver extends AppCompatActivity {
 
         tableProductos = findViewById(R.id.tableProductosVer);
 
-        Gestion gestion = DataHolder.getGestion();
+        Gestion<Producto> gestion = DataHolder.getGestion();
 
-        for (Producto p : gestion.obtenerProductos()) {
+        for (Producto p : gestion.obtenerTodos()) {
             TableRow fila = new TableRow(this);
 
             TextView tvId = new TextView(this);

@@ -3,30 +3,30 @@ package models;
 import java.security.spec.PSSParameterSpec;
 import java.util.List;
 
-public class Gestion {
-    private List<Producto> listaProductos;
+public class Gestion<T extends Identificar> {
+    private List<T> listaElementos;
 
-    public Gestion(List<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
+    public Gestion(List<T> listaElementos) {
+        this.listaElementos = listaElementos;
     }
 
-    public void agregarProducto(Producto p){
-listaProductos.add(p);
-    }
-    public List<Producto> obtenerProductos(){
-        return  listaProductos;
+    public void agregar(T elemento) {
+        listaElementos.add(elemento);
     }
 
-
-    public void eliminarProducto(int id){
-        listaProductos.removeIf(p -> p.getId() == id);
-
+    public List<T> obtenerTodos() {
+        return listaElementos;
     }
-    public  void actualizarProduct(Producto productoActualizado){
-        for (int i =0; i < listaProductos.size(); i++){ //recorrimos la lista  usando el for
-            Producto p = listaProductos.get(i);   //optenemos el producto actual
-            if (p.getId() ==productoActualizado.getId()){ // comparo las id ( osea si conside con lo que quiero modificar)
-                listaProductos.set(i,productoActualizado); // remplazo el producto en la lista usando esto
+
+    public void eliminar(int id) {
+        listaElementos.removeIf(e -> e.getId() == id);
+    }
+
+    public void actualizar(T elementoActualizado) {
+        for (int i = 0; i < listaElementos.size(); i++) {
+            T e = listaElementos.get(i);
+            if (e.getId() == elementoActualizado.getId()) {
+                listaElementos.set(i, elementoActualizado);
                 break;
             }
         }

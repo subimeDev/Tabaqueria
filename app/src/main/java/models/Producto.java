@@ -1,6 +1,6 @@
 package models;
 
-public class Producto {
+public class Producto implements Identificar{
     private  int id;
     private String Nombre;
     private int Cantidad;
