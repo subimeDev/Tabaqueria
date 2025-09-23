@@ -151,6 +151,10 @@ public class Agregar extends AppCompatActivity {
                 tvPrecio.setText(String.valueOf(nuevo.getPrecio()));
                 tvPrecio.setPadding(8, 8, 8, 8);
 
+                TextView tvTipo = new TextView(Agregar.this);
+                tvTipo.setText(tipoSeleccionado);
+                tvTipo.setPadding(8, 8, 8, 8);
+
                 ImageButton btnDelete = new ImageButton(Agregar.this);
                 btnDelete.setImageResource(android.R.drawable.ic_menu_delete);
                 btnDelete.setBackgroundColor(Color.TRANSPARENT);
@@ -199,6 +203,7 @@ public class Agregar extends AppCompatActivity {
                 fila.addView(tvNombre);
                 fila.addView(tvCantidad);
                 fila.addView(tvPrecio);
+                fila.addView(tvTipo);
                 fila.addView(btnUpdate);
                 fila.addView(btnDelete);
                 tableProductos.addView(fila);
