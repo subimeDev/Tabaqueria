@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">evaa</string>
+    <string name="app_name">AKAI HUMO</string>
     <string-array name="tipos_producto">
         <item>Cigarro</item>
         <item>Encendedor</item>
@@ -7,4 +7,9 @@
         <item>Papel</item>
         <item>Tabaco</item>
     </string-array>
+    <string name="title_activity_barra_inferior">barraInferior</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_barrabaja">barrabaja</string>
 </resources>

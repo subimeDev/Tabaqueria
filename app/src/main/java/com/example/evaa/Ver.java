@@ -2,14 +2,18 @@ package com.example.evaa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import models.DataHolder;
 import models.Gestion;
+import models.Producto;
 import models.Tabaco;
 
 public class Ver extends AppCompatActivity {
@@ -21,31 +25,59 @@ public class Ver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver);
 
+
+
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+
+// marcar agregar como seleccionado
+        navView.setSelectedItemId(R.id.navigation_ver);
+
+        navView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_inicio:
+                    startActivity(new Intent(Ver.this, MainActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+
+                case R.id.navigation_agregar:
+                    startActivity(new Intent(Ver.this, Ver.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+
+                case R.id.navigation_ver:
+                    return  true;
+            }
+            return false;
+        });
+
         tableProductos = findViewById(R.id.tableProductosVer);
 
-        Gestion<Tabaco> gestion = DataHolder.getGestion();
+        Gestion<Producto> gestion = DataHolder.getGestion();
 
-        for (Tabaco p : gestion.obtenerTodos()) {
+        for (Producto p : gestion.obtenerTodos()) {
             TableRow fila = new TableRow(this);
 
             TextView tvId = new TextView(this);
             tvId.setText(String.valueOf(p.getId()));
-            tvId.setPadding(8, 8, 8, 8);
-            tvId.setTextColor(Color.BLACK);
 
             TextView tvNombre = new TextView(this);
             tvNombre.setText(p.getMarca());
-            tvNombre.setPadding(8, 8, 8, 8);
-            tvNombre.setTextColor(Color.BLACK);
 
             TextView tvCantidad = new TextView(this);
             tvCantidad.setText(String.valueOf(p.getCantidad()));
-            tvCantidad.setPadding(8, 8, 8, 8);
-            tvCantidad.setTextColor(Color.BLACK);
 
             TextView tvPrecio = new TextView(this);
-            tvPrecio.setText(String.valueOf(p.getPrecio()));
+            tvPrecio.setText("$" + p.getPrecio());
+
+
+            tvId.setPadding(8, 8, 8, 8);
+            tvNombre.setPadding(8, 8, 8, 8);
+            tvCantidad.setPadding(8, 8, 8, 8);
             tvPrecio.setPadding(8, 8, 8, 8);
+
+            tvId.setTextColor(Color.BLACK);
+            tvNombre.setTextColor(Color.BLACK);
+            tvCantidad.setTextColor(Color.BLACK);
             tvPrecio.setTextColor(Color.BLACK);
 
             fila.addView(tvId);
@@ -55,5 +87,6 @@ public class Ver extends AppCompatActivity {
 
             tableProductos.addView(fila);
         }
+
     }
 }
