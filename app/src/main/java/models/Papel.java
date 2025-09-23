@@ -1,6 +1,6 @@
 package models;
 
-public class Papel implements Identificar{
+public class Papel implements Producto{
     private int id;
     private String marca;
     private int cantidad;
@@ -25,26 +25,32 @@ public class Papel implements Identificar{
         this.id = id;
     }
 
+    @Override
     public String getMarca() {
         return marca;
     }
 
+    @Override
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
+    @Override
     public int getCantidad() {
         return cantidad;
     }
 
+    @Override
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
+    @Override
     public double getPrecio() {
         return precio;
     }
 
+    @Override
     public void setPrecio(double precio) {
         this.precio = precio;
     }

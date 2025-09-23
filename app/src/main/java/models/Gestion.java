@@ -3,7 +3,7 @@ package models;
 import java.security.spec.PSSParameterSpec;
 import java.util.List;
 
-public class Gestion<T extends Identificar> {
+public class Gestion<T extends Producto> {
     private List<T> listaElementos;
 
     public Gestion(List<T> listaElementos) {

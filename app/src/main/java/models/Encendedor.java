@@ -1,10 +1,10 @@
 package models;
 
-public class Encendedor implements Identificar{
+public class Encendedor implements Producto{
     private int id;
     private double precio;
     private String Marca;
-    private int tipo;
+    private int cantidad;
 
     public Encendedor() {
     }
@@ -13,7 +13,7 @@ public class Encendedor implements Identificar{
         this.id = id;
         this.precio = precio;
         Marca = marca;
-        this.tipo = tipo;
+        this.cantidad = tipo;
     }
 
     @Override
@@ -25,27 +25,33 @@ public class Encendedor implements Identificar{
         this.id = id;
     }
 
+    @Override
     public double getPrecio() {
         return precio;
     }
 
+    @Override
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
+    @Override
     public String getMarca() {
         return Marca;
     }
 
+    @Override
     public void setMarca(String marca) {
         Marca = marca;
     }
 
-    public int getTipo() {
-        return tipo;
+    @Override
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
+    @Override
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }

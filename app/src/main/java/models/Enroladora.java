@@ -1,21 +1,19 @@
 package models;
 
-public class Enroladora implements Identificar{
+public class Enroladora implements Producto{
     private int id;
-    private Double precio;
+    private double precio;
     private String marca;
-    private String tipo;
-    private String materia;
+    private int cantidad;
 
     public Enroladora() {
     }
 
-    public Enroladora(int id, Double precio, String marca, String tipo, String materia) {
+    public Enroladora(int id, double precio, String marca, int tipo) {
         this.id = id;
         this.precio = precio;
         this.marca = marca;
-        this.tipo = tipo;
-        this.materia = materia;
+        this.cantidad = tipo;
     }
 
     @Override
@@ -27,35 +25,33 @@ public class Enroladora implements Identificar{
         this.id = id;
     }
 
-    public Double getPrecio() {
+    @Override
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    @Override
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
+    @Override
     public String getMarca() {
         return marca;
     }
 
+    @Override
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public String getTipo() {
-        return tipo;
+    @Override
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getMateria() {
-        return materia;
-    }
-
-    public void setMateria(String materia) {
-        this.materia = materia;
+    @Override
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }

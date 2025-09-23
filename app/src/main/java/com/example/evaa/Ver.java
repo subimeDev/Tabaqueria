@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import models.DataHolder;
 import models.Gestion;
-import models.Producto;
+import models.Tabaco;
 
 public class Ver extends AppCompatActivity {
 
@@ -23,9 +23,9 @@ public class Ver extends AppCompatActivity {
 
         tableProductos = findViewById(R.id.tableProductosVer);
 
-        Gestion<Producto> gestion = DataHolder.getGestion();
+        Gestion<Tabaco> gestion = DataHolder.getGestion();
 
-        for (Producto p : gestion.obtenerTodos()) {
+        for (Tabaco p : gestion.obtenerTodos()) {
             TableRow fila = new TableRow(this);
 
             TextView tvId = new TextView(this);
@@ -34,7 +34,7 @@ public class Ver extends AppCompatActivity {
             tvId.setTextColor(Color.BLACK);
 
             TextView tvNombre = new TextView(this);
-            tvNombre.setText(p.getNombre());
+            tvNombre.setText(p.getMarca());
             tvNombre.setPadding(8, 8, 8, 8);
             tvNombre.setTextColor(Color.BLACK);
 

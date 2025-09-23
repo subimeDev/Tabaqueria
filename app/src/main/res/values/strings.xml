@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">evaa</string>
+    <string-array name="tipos_producto">
+        <item>Cigarro</item>
+        <item>Encendedor</item>
+        <item>Enroladora</item>
+        <item>Papel</item>
+        <item>Tabaco</item>
+    </string-array>
 </resources>

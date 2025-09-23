@@ -1,20 +1,18 @@
 package models;
 
-public class Cigarro implements Identificar{
+public class Cigarro implements Producto{
     private int id;
     private String marca;
     private int cantidad;
-    private String tipo;
-    private Double precio;
+    private double precio;
 
     public Cigarro() {
     }
 
-    public Cigarro(int id, String marca, int cantidad, String tipo, Double precio) {
+    public Cigarro(int id, String marca, int cantidad, double precio) {
         this.id = id;
         this.marca = marca;
         this.cantidad = cantidad;
-        this.tipo = tipo;
         this.precio = precio;
     }
 
@@ -27,35 +25,33 @@ public class Cigarro implements Identificar{
         this.id = id;
     }
 
+    @Override
     public String getMarca() {
         return marca;
     }
 
+    @Override
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
+    @Override
     public int getCantidad() {
         return cantidad;
     }
 
+    @Override
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public Double getPrecio() {
+    @Override
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    @Override
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 }
