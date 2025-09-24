@@ -6,30 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".Ver">
 
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:text="Productos"
+        android:textColor="#222222"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <TableLayout
         android:id="@+id/tableProductosVer"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:animateLayoutChanges="true"
+        android:elevation="4dp"
+        android:padding="16dp"
         android:stretchColumns="*"
-        android:padding="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo">
 
-        <TableRow>
+        <TableRow android:background="#EEEEEE">
+
             <TextView
+                android:gravity="center"
+                android:padding="12dp"
                 android:text="ID"
-                android:textStyle="bold"
-                android:padding="8dp"/>
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <TextView
+                android:gravity="center"
+                android:padding="12dp"
                 android:text="Nombre"
-                android:textStyle="bold"
-                android:padding="8dp"/>
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <TextView
+                android:gravity="center"
+                android:padding="12dp"
                 android:text="Cantidad"
-                android:textStyle="bold"
-                android:padding="8dp"/>
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <TextView
+                android:gravity="center"
+                android:padding="12dp"
                 android:text="Precio"
-                android:textStyle="bold"
-                android:padding="8dp"/>
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 

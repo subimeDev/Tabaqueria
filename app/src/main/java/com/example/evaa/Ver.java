@@ -8,9 +8,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import models.DataHolder;
-import models.Gestion;
-import models.Tabaco;
+import models.*;
 
 public class Ver extends AppCompatActivity {
 
@@ -23,9 +21,9 @@ public class Ver extends AppCompatActivity {
 
         tableProductos = findViewById(R.id.tableProductosVer);
 
-        Gestion<Tabaco> gestion = DataHolder.getGestion();
+        Gestion<Producto> gestion = DataHolder.getGestion();
 
-        for (Tabaco p : gestion.obtenerTodos()) {
+        for (Producto p : gestion.obtenerTodos()) {
             TableRow fila = new TableRow(this);
 
             TextView tvId = new TextView(this);
@@ -55,5 +53,6 @@ public class Ver extends AppCompatActivity {
 
             tableProductos.addView(fila);
         }
+
     }
 }
