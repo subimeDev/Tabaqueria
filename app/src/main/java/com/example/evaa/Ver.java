@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,6 +21,9 @@ public class Ver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver);
+
+        Button btnAtras = findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(v -> finish());
 
         tableProductos = findViewById(R.id.tableProductosVer);
 
